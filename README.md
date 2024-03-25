@@ -12,12 +12,14 @@
 - Systemic: Components of the time series that have **consistency or recurrence** and **can be described and modeled** (i.e., level, trend, Seasonality.)
 - Non-Systemic: Components of the time series that **cannot be directly modeled or explained** by the model (i.e., Noise.)
 
-<img width="670" alt="Screenshot 2024-03-24 at 11 20 02 PM" src="https://github.com/ColleenJung/TimeSeriesAnalysis_Forcasting/assets/119357849/6299cdd8-6820-47cd-9783-54739eb99f05">
 
 - Level: The baseline value for the series if it were a straight line (The average value in the series).
 - **Trend:** Pattern exists when there is a long-term increase or decrease in the data. It does not have to be linear
 - **Seasonal:** Pattern exists when a series is influenced by seasonal factors (e.g., the quarter of the year, the month, or day of the week). Seasonality is always of a fixed and known period
 - **Cyclic**: Pattern exists when data exhibit rises and falls that are not of fixed period (duration usually of at least2 years).
+
+<img width="670" alt="Screenshot 2024-03-24 at 11 20 02 PM" src="https://github.com/ColleenJung/TimeSeriesAnalysis_Forcasting/assets/119357849/6299cdd8-6820-47cd-9783-54739eb99f05">
+
 
 <img width="674" alt="Screenshot 2024-03-24 at 11 21 27 PM" src="https://github.com/ColleenJung/TimeSeriesAnalysis_Forcasting/assets/119357849/da11e9f5-e901-49b7-a3f4-da0a6b20713b">
 
