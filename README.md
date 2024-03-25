@@ -95,6 +95,8 @@ Let 𝑒 , 𝑒 ⋯ , 𝑒 be a sequence of independent, identically distributed
 
 <img width="673" alt="Screenshot 2024-03-24 at 11 48 55 PM" src="https://github.com/ColleenJung/TimeSeriesAnalysis_Forcasting/assets/119357849/34aada3c-eaee-4c63-bf5b-cffa1d3a8789">
 
+<img width="662" alt="Screenshot 2024-03-24 at 11 58 02 PM" src="https://github.com/ColleenJung/TimeSeriesAnalysis_Forcasting/assets/119357849/479c18b1-6247-45ee-ab73-95cb5811fe64">
+
 # Forcasting Residuals
 - Definition: A residual in forecasting is the difference between an observed value and its forecast based on other observations:
 
