@@ -1,7 +1,6 @@
 # TimeSeriesAnalysis_Forcasting
 
-# Week 1
-# Intro: What is Time Series?
+# Week 1: What is Time Series?
 - Definition: A time series is an **ordered sequence** of obeservations taken sequentially in time
 - Assumption: Assume the time periods are equally spaced
 - **Problem Uniqueness**: The correlation introduced by the sampling of adjacent points in time can severely restrict the applicability of the many conventional statistical methods traditionally dependent on the assumption that these adjacent observations are independent and identically distributed.
