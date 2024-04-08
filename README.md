@@ -179,3 +179,99 @@ If a store increases its sales each March at a rate of 50% (i.e., an increase by
 # FPP package: Exponential Smoothing Methods
 
 <img width="772" alt="Screenshot 2024-04-01 at 4 11 11 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/f3b52e14-e1c5-49a1-a4c8-055969a1a966">
+
+# Week 3: ARIMA - non seasonal stationary time series
+
+# Box-Cox Transformations
+
+<img width="726" alt="Screenshot 2024-04-08 at 4 53 41 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/0a1fc9d3-3ada-4fa1-bc50-faaf1a0fa597">
+
+- Problem: Unstabilized the variance.
+- Motivation: Simpler patterns (i.e., additive) usually lead to more accurate forecasts.
+- Approach: Decouple mean and variance to remove variance dependence on mean
+- Often no transformation is needed (𝜆 = 1).
+- Transformations sometimes make little difference to the forecasts **but have a large effect
+on prediction intervals**
+
+<img width="717" alt="Screenshot 2024-04-08 at 4 54 53 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/83cc9609-1c16-4485-9007-0d801b12f6be">
+
+# Box-Jenkins Method
+- The Box-Jenkins model assumes that the time series is stationary.
+- Uses an iterative three-stage modeling approach:
+1. Model Identification and Model Selection: Use the data and all related information to help select a sub-class of model that may best summarize the data.
+2. Model Estimation: Use the data to train the parameters of the model (i.e., the coefficients.)
+3. Model Validation: Evaluate the fitted model in the context of the available data and check for areas where the model may be improved.
+
+# Autoregressive (AR) Process
+
+<img width="719" alt="Screenshot 2024-04-08 at 5 06 00 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/b8600392-94d6-4a16-8359-864b35b13c66">
+
+- Autoregressive processes are as their name suggests—**regressions on themselves.**
+
+<img width="727" alt="Screenshot 2024-04-08 at 5 10 17 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/fdfac4c1-7f16-49d8-a273-7117429cf3dd">
+
+Notes:
+Since φ < 1, the magnitude of the autocorrelation function decreases exponentially as the
+number of lags 𝑘 increases.
+• If 𝟎 < 𝝓 < 𝟏, all correlations are positive.
+• If −𝟏 < 𝝓 < 𝟎, the lag 1 autocorrelation 𝜌 = φ is negative, and the signs of successive 1
+autocorrelations alternate with their magnitudes decreasing exponentially.
+
+<img width="731" alt="Screenshot 2024-04-08 at 5 10 34 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/3c9c61ea-975d-403b-9312-4517b1dcf20b">
+
+# Phi Φ(𝐵) Operator
+
+<img width="724" alt="Screenshot 2024-04-08 at 5 12 45 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/85463a58-7279-498c-ba4a-c1d51caba6bb">
+
+# Moving Average (MA) Process
+- 𝑀𝐴(𝑞) Model Take Away: The autocorrelation function “cuts off” after lag q; that is, it is zero.
+- **pure 𝑴𝑨(𝒒) process is always a stationary process**
+- Note 1 : MA and Stationarity
+Since the 𝑀𝐴(𝑞) is a special case of the Wold’s decomposition, the 𝑀𝐴(𝑞) process is always stationary regardless of values of the weights.
+<img width="731" alt="Screenshot 2024-04-08 at 5 19 46 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/d112758b-3c38-4ed1-856c-cec2a309dc96">
+- Note 2 : MA and interpretation
+Another interpretation of the finite order MA processes is that at any given time, of the infinitely many past disturbances, only a finite number of those disturbances "contribute" to the current value of the time series and that the time window of the contributors "moves" in time, making the "oldest" disturbance obsolete for the next observation.
+
+# Invertibility
+- It can be shown that the 𝑀𝐴(𝑞) model is invertible; **if and only if the roots of the 𝑀𝐴 characteristic equation exceed 1 in modulus.**
+
+
+# Autoregressive Moving Average Process
+
+<img width="709" alt="Screenshot 2024-04-08 at 5 22 55 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/b6e9be99-eba1-4819-98d8-07348adea133">
+
+# Differencing
+
+- Recall:
+1)Transformations help to stabilize the variance.
+2) Motivation: Make the time series stationary.
+- Definition: Differencing is a method of transforming a non-stationary time series to a stationary
+one. 
+- This is an important step in preparing data to be used in an ARIMA model.
+
+<img width="734" alt="Screenshot 2024-04-08 at 5 25 16 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/faac7c5a-9c18-4ad2-a8f6-589e56bfe5cc">
+
+# Integrated Autoregressive Moving Average Model (ARIMA) Definition AR𝐼𝑀𝐴(𝑝, 𝑑, 𝑞)
+
+<img width="732" alt="Screenshot 2024-04-08 at 5 26 35 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/d4b5cda8-74a5-49da-b23d-6c4cc253cb85">
+
+- AR: Autoregression. A model that uses the dependent relationship between an observation and some number of lagged observations.
+- I: Integrated. The use of differencing of raw observations (i.e., subtracting an observation from an observation at the previous time step) in order to make the time series stationary.
+- MA: Moving Average. A model that uses the dependency between an observation and residual errors from a moving average model applied to lagged observations.
+- 𝒑: The number of lag observations included in the model, also called the lag order.
+- 𝒅: The number of times that the raw observations are differenced, also called the degree of differencing.
+- 𝒒: The size of the moving average window, also called the order of moving average.
+
+# PARTIAL AUTOCORRELATION FUNCTION (PACF)
+
+<img width="720" alt="Screenshot 2024-04-08 at 5 27 19 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/08c0fbab-7c26-4f12-9744-2ae5f607151a">
+
+<img width="732" alt="Screenshot 2024-04-08 at 5 27 42 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/639c0f52-7447-4bfd-9ed0-5601d1801194">
+
+<img width="726" alt="Screenshot 2024-04-08 at 5 27 55 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/e980176e-c50f-465c-8f45-696840035b69">
+
+# Extended ACF (EACF)
+- The EACF method uses the fact that if the AR part of a mixed ARMA model is known, “filtering out“ the autoregression from the observed time series results in a pure MA process that enjoys the cutoff property in its ACF. The AR coefficients may be estimated by a finite sequence of regressions.
+
+<img width="727" alt="Screenshot 2024-04-08 at 5 28 36 PM" src="https://github.com/ColleenJung/SP24_TimeSeriesAnalysis-Forcasting-Notebook/assets/119357849/27764f41-a88e-41ee-ba54-f93db33e420c">
+
